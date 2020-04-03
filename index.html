@@ -9,37 +9,62 @@
     </head>
     <body>
         <div class="jumbotron header">
-            <h1 class="display-4 title">Pet Meme Generator</h1>
+            <h1 class="display-4 title">Pet Memes</h1>
             <p class="lead">Create a personalized meme inspired by your pet!</p>
         </div>
 
-        <div class="description container-fluid">
-            <h3>Upload. Write. Style. Share.</h3>
-            <h4>Example</h4>
-        </div>
-        
-        <div class="sub-content upload-photo container-fluid">
-            <div class="form-group">
-                <form class="form-group" action="">
-                    <label for="addPhoto"><h3>Upload Your Picture</h3></label>
-                    <input type="file" class="form-control-file" id="addPhoto">
+        <div class="container main">
+//row 1
+            <div class="row description">
+                <div class="col"><h3>Upload. Write. Style. Share.</h3></div>
+                <div class="col"><h4>Example</h4></div>
+            </div>
+            <br>
+// row 2
+            <div class="row">
+            <div class="container newMemeForm">
+                <form action="">
+                    <div class="form-row upload-photo">
+                        <div class="d-flex">
+                            <h3>Upload Your Picture</h3>
+                        </div>
+                    
+                        <div class="form-group d-flex>
+                            <label for="addPhoto"><p>JPEG - GIF - PNG</p</label>
+                            <input type="file" class="form-control-file" id="addPhoto">
+                        </div>
+                    </div>
+
+                    <div class="form-row text-area">
+                        <h3>Add Text</h3>
+                        <br>
+                        <div class="form-group col">
+                            <label for="addTextTop"><p>Add text to the top of your meme</p></label>
+                            <textarea class="form-control" id="addTextTop" rows="2"></textarea>
+                        </div>
+                        <div class="form-group col">
+                            <label for="addTextBottom"><p>Add text to the bottom of your meme<p></label>
+                            <textarea class="form-control" id="addTextBottom" rows="2"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row footer">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
                 </form>
             </div>
-        </div>
-
-        <div class="sub-content text-area container-fluid">
-            <div class="form-group">
-                <label for="memeText"><h3>Add Text</h3></label>
-                <textarea class="form-control" id="addText" rows="2"></textarea>
-            </div>
-        </div>   
+            </div>   
             
-        <div class="sub-content add-style container-fluid"></div>
+        <!-- <div class="sub-content add-style container-fluid"></div>
             <h3>Add Styling</h3>
-        </div>
+        </div> -->
+    </form>
+
+    <div></div>
+
+     </div>">
 
         
-        <div>Share buttons</div>
 
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
