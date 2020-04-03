@@ -5,7 +5,7 @@
 
 .main {
     /* position: relative; */
-    display: block;
+    /* display: block; */
 }
 
 /* .row {
@@ -16,12 +16,18 @@
 
 .newMemeForm {
     /* position: relative; */
-    display: block;
+    /* display: block; */
     /* margin: auto;
     text-align: left; */
 }
 
-.container {
-    display: block;
+
+.form-row {
+    /* display: block; */
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.upload-photo {
 }
 
