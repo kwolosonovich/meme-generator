@@ -4,71 +4,64 @@
         <title>Meme Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
-        <div class="jumbotron header">
-            <h1 class="display-4 title">Pet Memes</h1>
-            <p class="lead">Create a personalized meme inspired by your pet!</p>
+        <div class="header">
+            <h1>Pet Memes</h1>
+            <h2>Create a personalized meme inspired by your pet!</h2>
         </div>
 
-        <div class="container-fluid description">
+        <div class="description">
 <!-- row 1 description-->
             <div class="row">
-                <div class="col-md-6 description"><h3>Upload. Write. Style. Share.</h3></div>
-                <div class="col-md-6"><h4>Example</h4></div>
+                <div class="column"><h3>Upload. Create. Share.</h3></div>
+                <div class="column"><h4>Example</h4></div>
             </div>
         </div>
 <!-- row 2 submit new meme form-->
     <section class="main-content">
-        <div class="container-fluid newMemeForm">
-            <form>
+        <div class="new-meme-form">
+            <form id="create-meme">
+
                 <div class="upload-photo">
-                    <legend>Upload Your Picture</legend>
+                    <h2>Upload Your Picture</h2>
+                    <input type="file" class="file-input" id="addPhoto">
                 </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="addPhoto">
-                    <label class="submitPhotoField custom-file-label" for="addPhoto"></label>
-                </div>
-                <div class="form-row align-items-center">
-                    <legend>Add Text</legend>
-                        <div class="col-sm-6 p-4">
-                            <label for="addTextTop">Add text to the top of your meme</label>
-                            <input type="text" class="textField form-control form-control-lg" id="addTextTop">
-                        </div>
-                        
-                        <div class="col-sm-6 p-4">
-                            <label for="addTextBottom">Add text to the bottom of your meme</label>
-                            <input type="text" class="textField form-control form-control-lg" id="addTextBottom">
-                        </div>
+
+                <div class="add-text">
+                    <h3>Add Text</h3>
+                        <label for="meme-text-top">Add text to the top of your meme</label>   
+                        <textarea name="text-field" id="meme-text-top" cols="25" rows="2"></textarea>
+                        <br>
+                        <label for="meme-text-bottom">Add text to the bottom of your meme</label>
+                        <textarea name="text-field" id="meme-text-bottom" cols="25" rows="2"></textarea>
                 </div> 
             
 
-                <div class="form-group footer">
-                    <button type="submit" class="submitButton btn btn-outline-primary">Create</button>
+                <div class="submit-form">
+                    <button type="submit" form="create-meme" class="submitButton">Create</button>
                 </div>
 
             </form>
         </div>   
             
 <!-- gallery -->
-        <div class="container-fluid gallery">
+        <div class="gallery">
             <h3>Gallery</h3>
-            <div class="row row-cols-3">
-                <!-- append new meme -->
-                <div class="col">1</div>
-                <div class="col">2</div>
-                <div class="col">3</div>
-            </div>
+                <div class="row">
+                    <div class="column">
+
+                    </div>
+
+                </div>
+            
         </div> 
 
         
     </section>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+       
         <script src="app.js"></script>
 
     </body>

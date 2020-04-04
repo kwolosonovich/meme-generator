@@ -4,14 +4,24 @@
     background-color: #2b9497;
     margin: 0;
     color:  #f1fcfc;
+    padding: 4rem 3rem .5rem;
+}
+h1 {
+    font-size: 50px;
 }
 
-legend, h3 {
-    margin-top: 30px;
-    margin-bottom: 30px;
+
+h2, h3 {
+    margin: 0;
     font-size: 28px;
+    padding: 10px;
 }
 
+.description {
+    margin: 0;
+    position: relative;
+    padding: 100px;
+}
 
 .main-content {
     text-align: center;
@@ -19,11 +29,10 @@ legend, h3 {
     margin: 0;
 }
 
-
-.newMemeForm {
+.new-meme-form {
+    position: relative;
     background-color: #8bc8cac4;
     color: #f1fcfc;
-    /* padding: 40px; */
 }
 
 .description {
@@ -32,48 +41,57 @@ legend, h3 {
     color:  #2b9497;
 }
 
-.gallery {
-    background-color:  #f1fcfc;
-    color:  #2b9497;
-}
-
-.form-row {
-    margin-top: 35px;
-}
 
 .upload-photo {
     justify-content: center;
+    margin: 0;
+    padding: 60px 0px;
 }
 
 .submitButton {
-    margin-top: 40px;
+    margin: 40px 0px;
     background-color:  #f1fcfc;
     color: #2b9497;
     border: 1px solid #2b9497;
 }
 
-.submitPhotoField {
+/* .submitPhotoF {
     justify-content: center;
     color: #394949;
     background-color: #f1fcfc;
     border-radius: .3rem;
-    /* width: 45%; */
+} */
 
+
+.file-input {
+    padding: 30px 0px;
 }
 
-.textField {
-    background-color: #f1fcfc;
+/* .add-text {
+    display: inline;
+} */
+
+
+
+/* gallery  */
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px
 }
 
-.container-fluid{
-  padding: 7% 15%;
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.col {
-    border: 1px ridge rgb(146, 146, 163);
-    border-radius: .3rem;
-    /* padding: 5px; */
-    
+.gallery {
+    padding-top: 60px;
+    background-color:  #f1fcfc;
+    color:  #2b9497;
+    min-height: 300px;
 }
 
 
