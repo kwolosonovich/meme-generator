@@ -4,10 +4,16 @@ var photoInput = document.getElementById('file-id').value
 var createMeme = document.getElementById('submit-button')
 
 var memeObj = {
-    photo: undefined,
-    topText: undefined,
-    bottomText: undefined,
-}
+  photo: undefined,
+  imgCanvas: undefined,
+  imgContext: undefined,
+//   imgCanvasWidth: undefined,
+//   imgCanvasHeight: undefined,
+
+  dateURL: undefined,
+  topText: undefined,
+  bottomText: undefined,
+};
 
 // add event listener to addPhoto
 
@@ -19,7 +25,27 @@ var memeObj = {
 // set photo value
 function photoSrc (e) {
     var photoInput = document.getElementById("file-id").files[0].name;
+    // var photoInput = document.getElementById("file-id");
+
     memeObj.photo = photoInput;
+}
+
+function memeCanvas() {
+    memeObj.imgCanvas = document.createElement("canvas")
+    memeObj.imgContext = memeObj.imgCanvas.getContext("2d");
+    console.log(memeObj)
+    console.log(memeObj.photo.width);
+
+    memeObj.imgCanvas.width = memeObj.photo.width;
+    memeObj.imgCanvas.height = memeObj.photo.height;
+    memeObj.imgContext.drawImage(
+      memeObj.photo,
+      0,
+      0,
+      memeObj.photo.width,
+      memeObj.photo.height
+    );
+    // console.log(memeObj)
 }
 
 
@@ -39,21 +65,23 @@ createMeme.addEventListener('click', function(e) {
     photoSrc()
     topTextInput();
     bottomTextInput();
-    console.log(memeObj)
-    createMemePhoto();
-
+    // console.log(memeObj)
+    memeCanvas()
 })
 
-function createMemePhoto () {
-    var newMeme = document.createElement("img")
-    newMeme.src = memeObj.photo
-    console.log(newMeme)
-}
+//save to local storage using imgCanvas
 
-function createMemeText() {
-    var memeTopText = document.createElement("div");
 
-}
+// function createMemePhoto () {
+//     var newMeme = document.createElement("img")
+//     newMeme.src = memeObj.photo
+//     console.log(newMeme)
+// }
+
+// function createMemeText() {
+//     var memeTopText = document.createElement("div");
+
+// }
 
 // add new meme to gallery 
 
