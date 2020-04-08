@@ -1,10 +1,16 @@
+body {
+    margin: 0;
+}
 
 .header {
+    position: relative;
     text-align: right;
     background-color: #2b9497;
     margin: 0;
     color:  #f1fcfc;
     padding: 4rem 3rem .5rem;
+    border-bottom: 2px dashed white;
+    border-top: 2px dashed white;
 }
 
 h1 {
@@ -20,7 +26,7 @@ h2, h3 {
 .main-content {
     text-align: center;
     justify-content: center;
-    margin: 0;
+    margin: 0px;
 }
 
 .description {
@@ -28,7 +34,7 @@ h2, h3 {
     position: relative;
     padding: 100px 34px;
     background-color: #f1fcfc;
-    color:  #2b9497;
+    color:  #2b9497; 
 }
 
 /*** form ***/
@@ -36,6 +42,8 @@ h2, h3 {
     position: relative;
     background-color: #8bc8cac4;
     color: #f1fcfc;
+    border-bottom: 2px dashed white;
+    border-top: 2px dashed white;
 }
 
 .upload-photo {
@@ -53,6 +61,10 @@ h2, h3 {
 
 .form-input {
     padding: 30px 11px;
+}
+
+#file-id {
+    border: 1px dashed white;
 }
 
 /*** meme gallery ***/
