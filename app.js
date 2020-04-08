@@ -38,8 +38,9 @@ var canvasImg = {
 
 createMeme.addEventListener("click", function (e) {
   e.preventDefault();
-  photoSrc();
-  readImage()
+//   photoSrc();
+    document.getElementById("file-id").addEventListener("change", readImage, false);
+//   readImage()
 //   saveImg();
   appendMemeToDiv();
   topTextInput();
@@ -47,13 +48,14 @@ createMeme.addEventListener("click", function (e) {
 });
 
 
-function photoSrc () {
-    memeObj.photoInput = document.getElementById("file-id").files[0];
-    memeObj.photoSrc = document.getElementById("file-id").files[0].name;  
-    // const ctx = photoInput.getContext("2d");
-}
+// function photoSrc () {
+//     memeObj.photoInput = document.getElementById("file-id").files[0];
+//     memeObj.photoSrc = document.getElementById("file-id").files[0].name;  
+//     // const ctx = photoInput.getContext("2d");
+// }
 
-function readImage() {
+function readImage(e) {
+    console.log(e)
     var reader = new FileReader()
     reader.onload = function() {
         // var span = document.createElement("span")
