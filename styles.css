@@ -88,14 +88,14 @@ h2, h3 {
   display: table;
 }
 
-.gallery {
+#gallery {
     padding-top: 60px;
     background-color:  #f1fcfc;
     color:  #2b9497;
     min-height: 300px;
 }
-.column.img {
-
+.memeFormat {
+    height: 50px;
 }
 
 .top-text {
