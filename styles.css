@@ -6,10 +6,16 @@ h1 {
     font-size: 50px;
 }
 
-h2, h3 {
+h2 {
     margin: 0;
-    font-size: 28px;
+    font-size: 35px;
     padding: 30px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 35px;
+    padding-bottom: 20px;
 }
 
 .header {
@@ -18,7 +24,7 @@ h2, h3 {
     background-color: #2b9497;
     margin: 0;
     color:  #f1fcfc;
-    padding: 4rem 3rem .5rem;
+    padding: 4rem 5rem .5rem;
     border-bottom: 2px dashed white;
     border-top: 2px dashed white;
 }
@@ -32,11 +38,29 @@ h2, h3 {
 .description {
     margin: 0;
     position: relative;
-    padding: 100px 34px;
+    display: inline-block;
+    padding: 25px 34px 20px 34px;
     background-color: #f1fcfc;
     color:  #2b9497; 
+    width: 100%;
 }
 
+.slogan {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 45px;
+    margin-top: 80px;
+    padding-left: 120px;
+}
+
+.meme-ex {
+    display: inline-block;
+    height: 450px;
+    padding-right: 550px;
+    padding-top: 130px;
+    float: right;
+    transform: rotate(15deg);
+}
 /*** form ***/
 
 .new-meme-form {

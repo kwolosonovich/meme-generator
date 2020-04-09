@@ -1,141 +1,85 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  var createMeme = document.getElementById("submit-button");
+  var addToGallery = document.getElementById("memes");
+  var memeForm = document.getElementById("create-meme");
 
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-    } else {
-        alert("The File APIs are not fully supported in this browser.");
-    }
+  var memeObj = {
+    photo: undefined,
+    topText: undefined,
+    bottomText: undefined,
+  };
 
-var createMeme = document.getElementById('submit-button');
-// var dragAndDrop = document.getElementById("file-id");
+  // main function
+  createMeme.addEventListener("click", function (e) {
+    e.preventDefault();
+    photoSrc();
+    topTextInput();
+    bottomTextInput();
+    memeForm.reset();
+    newMemeDivAdd();
+    createMemePhoto();
+    createMemeText();
+    removeMeme();
+  });
 
-// local storage array
-var memeArr = JSON.parse(localStorage.getItem("memeArr")) || [];
+  // set photo values
+  function photoSrc(e) {
+    var photoInput = document.getElementById("file-id").value;
+    console.log(photoInput);
+    memeObj.photo = photoInput;
+  }
 
-// meme values
-var memeObj = {
-  photoInput: undefined,
-  photoSrc: undefined,
-
-  imgData: undefined,
-  imgCanvas: undefined,
-  imgContext: undefined,
-  imgCanvasWidth: undefined,
-  imgCanvasHeight: undefined,
-// dateURL: undefined,
-  topText: undefined,
-  bottomText: undefined,
-};
-
-var canvasImg = {
-    canvas: undefined,
-    src: undefined,
-    width: 200,
-    height: 200,
-}
-
-// set photo value
-
-
-createMeme.addEventListener("click", function (e) {
-  e.preventDefault();
-//   photoSrc();
-    document.getElementById("file-id").addEventListener("change", readImage, false);
-//   readImage()
-//   saveImg();
-  appendMemeToDiv();
-  topTextInput();
-  bottomTextInput();
-});
-
-
-// function photoSrc () {
-//     memeObj.photoInput = document.getElementById("file-id").files[0];
-//     memeObj.photoSrc = document.getElementById("file-id").files[0].name;  
-//     // const ctx = photoInput.getContext("2d");
-// }
-
-function readImage(e) {
-    console.log(e)
-    var reader = new FileReader()
-    reader.onload = function() {
-        // var span = document.createElement("span")
-        // span.innerHTML = ['<img class="memeFormat" src="', memeObj.photoInput, '" title="', escape(memeObj.photoSrc), '"/>'].join('');
-        //   document.getElementById('gallery').insertBefore(div, null)
-        // };
-    // memeObj.photoSrc
-    reader.readAsDataURL(memeObj.photoInput);
-    }
-}
-
-function saveImg(photo) {
-    memeObj.imgData = getBase64Image(photo)
-    memeArr.push(memeObj);
-    localStorage.setItem("memeArr", JSON.stringify(memeArr));
-}
-
-// function getBase64Image(img) {
-//     console.log("at get base")
-//     var imgCanvas = document.createElement("canvas");
-//     imgCanvas.width = img.width
-//     imgCanvas.height = img.height
-
-//     var imgContext = imgCanvas.getContext("2d")
-//     imgContext.drawImage(img, 0, 0)
-
-//     var dataURL = imgCanvas.toDataURL("image/jpeg")
-    
-
-    // canvas.width = memeObj.photo.width;
-    // canvas.height = memeObj.photo.height;
-    //var ctx = canvas.getContext("2d");
-   // ctx.drawImage(memeObj.photo, canvasImg.width, canvasImg.width);
-
-    // var dataURL = canvas.toDataURL("image/png");
-    // console.log(dataURL);
-    // return dataURL.replace(/^data:image\/(png|jpg);base64,/,"")
-
-
-//top text
-function topTextInput() {
+  function topTextInput() {
     var getTopText = document.getElementById("text-input-top").value;
-    memeObj.topText = getTopText
-}
+    memeObj.topText = getTopText;
+  }
 
-//bottom text
-function bottomTextInput() {
+  function bottomTextInput() {
     var getBottomText = document.getElementById("text-input-bottom").value;
-    memeObj.bottomText = getBottomText
-}
+    memeObj.bottomText = getBottomText;
+  }
 
-//save to local storage 
+  //meme div
+  function newMemeDivAdd() {
+    var newMemeDiv = document.createElement("div")
+    newMemeDiv.id = memeObj.photo;
+    newMemeDiv.className += "new-meme-div"
+    addToGallery.appendChild(newMemeDiv);
+  }
 
-function appendMemeToDiv () {
-    var memeGallery = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");  
-    var image = new Image(200, 200);
-    
-    image.src = './pictures/example.jpg'
-    document.body.appendChild(image)
-    document.getElementById("gallery").appendChild(image);
-    // image.onload = drawImageActualSize;
-    src = JSON.parse(localStorage.getItem("memeArr"))  
-}
+  //create meme - add text - add delete button
+  function createMemePhoto() {
+    var memeDiv = document.getElementById(memeObj.photo)
+    var newMeme = document.createElement("img");
+    newMeme.src = memeObj.photo;
+    newMeme.className += "meme-format";
+    memeDiv.append(newMeme);
 
-/// function createMemePhoto () {
-//     var newMeme = document.createElement("img")
-//     newMeme.src = memeObj.photoSrcmeObj.photo;
-//     console.log(newMeme)
-// }
+  }  
 
-function createMemeText() {
+  function createMemeText() {   
+    var memeDiv = document.getElementById(memeObj.photo);
     var memeTopText = document.createElement("div");
-}
+    memeTopText.className += "meme-top-text";
+    memeTopText.innerHTML = memeObj.topText;
+    memeDiv.append(memeTopText);
 
+    var memeBottomText = document.createElement("div");
+    memeBottomText.className += "meme-bottom-text";
+    memeBottomText.innerHTML = memeObj.bottomText;
+    memeDiv.append(memeBottomText);
+  }
+
+  function removeMeme() {
+    var memeDiv = document.getElementById(memeObj.photo);
+    var deleteMeme = document.createElement("button");
+    deleteMeme.className += "remove-button";
+    deleteMeme.innerHTML = "Delete";
+    memeDiv.appendChild(deleteMeme);
+
+    deleteMeme.addEventListener("click", function (e) {
+      e.preventDefault;
+      memeDiv.remove();
+    });
+  }
 });
-
-
-// dragAndDrop.addEventListener("input", function (e) {
-//     e.preventDefault();
-//     e.stopPropagation();
-//     e.dataTransfer.dropEffect = "copy";
-// })
