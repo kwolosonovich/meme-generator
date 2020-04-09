@@ -25,16 +25,17 @@
 
                 <div class="upload-photo">
                     <h2>Upload Your Picture</h2>
-                    <input class="form-input" type="file" id="file-id" name="file" id="add-photo" accept="">
+                    <label for="file-id"></label>
+                    <input type="text" id="file-id" name="file" id="add-photo" placeholder="Image URL">
                 </div>
 
                 <div class="add-text">
                     <h3 class="form-input" >Add Text</h3>
-                        <label class="form-input" for="text-input-top">Add text to the top of your meme</label>   
-                        <textarea name="text-field" id="text-input-top" cols="25" rows="2"></textarea>
+                        <label for="text-input-top"></label>   
+                        <textarea name="text-field" id="text-input-top" cols="35" rows="2" placeholder="Add text to the top of your meme"></textarea>
                         <br>
-                        <label for="text-input-bottom">Add text to the bottom of your meme</label>
-                        <textarea name="text-field" id="text-input-bottom" cols="25" rows="2"></textarea>
+                        <label for="text-input-bottom"></label>
+                        <textarea name="text-field" id="text-input-bottom" cols="35" rows="2" placeholder="Add text to the bottom of your meme"></textarea>
                 </div> 
             
 
@@ -54,6 +55,5 @@
     </section>
        
         <script src="outline.js"></script>
-
     </body>
 </html>
