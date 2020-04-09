@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     photo: undefined,
     topText: undefined,
     bottomText: undefined,
+    memeId: undefined,
   };
 
   // main function
@@ -42,14 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
   //meme div
   function newMemeDivAdd() {
     var newMemeDiv = document.createElement("div")
-    newMemeDiv.id = memeObj.photo;
+    memeObj.memeId = Math.random().toString()
+    newMemeDiv.id = memeObj.memeId;
     newMemeDiv.className += "new-meme-div"
     addToGallery.appendChild(newMemeDiv);
   }
 
   //create meme - add text - add delete button
   function createMemePhoto() {
-    var memeDiv = document.getElementById(memeObj.photo)
+    var memeDiv = document.getElementById(memeObj.memeId)
     var newMeme = document.createElement("img");
     newMeme.src = memeObj.photo;
     newMeme.className += "meme-format";
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }  
 
   function createMemeText() {   
-    var memeDiv = document.getElementById(memeObj.photo);
+    var memeDiv = document.getElementById(memeObj.memeId);
     var memeTopText = document.createElement("div");
     memeTopText.className += "meme-top-text";
     memeTopText.innerHTML = memeObj.topText;
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function removeMeme() {
-    var memeDiv = document.getElementById(memeObj.photo);
+    var memeDiv = document.getElementById(memeObj.memeId);
     var deleteMeme = document.createElement("button");
     deleteMeme.className += "remove-button";
     deleteMeme.innerHTML = "Delete";
